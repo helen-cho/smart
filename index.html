@@ -51,30 +51,34 @@
 </head>
 <body class="min-h-screen bg-navy-50 font-sans text-navy-900 antialiased">
   <!-- Navigation -->
-  <nav class="sticky top-0 z-50 border-b border-navy-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-    <div class="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
-      <div class="flex items-center gap-2">
-        <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-navy text-warm">
+  <nav class="site-nav sticky top-0 z-50 border-b border-navy-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <div class="nav-inner mx-auto flex max-w-5xl items-center justify-between gap-3 px-4">
+      <div class="nav-brand flex min-w-0 items-center gap-2">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy text-warm">
           <i data-lucide="trophy" class="h-5 w-5"></i>
         </span>
-        <span class="text-lg font-bold tracking-tight text-navy">AI 스마트 워크톤</span>
+        <span class="nav-brand-text font-bold tracking-tight text-navy">AI 스마트 워크톤</span>
       </div>
-      <div class="flex items-center gap-2">
-        <a href="#stage-1" class="nav-menu-link">
+      <button type="button" class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu">
+        <i data-lucide="menu" class="nav-toggle-icon-open h-5 w-5"></i>
+        <i data-lucide="x" class="nav-toggle-icon-close h-5 w-5"></i>
+      </button>
+      <div id="nav-menu" class="nav-menu">
+        <a href="#stage-1" class="nav-menu-link" aria-label="제안서 초안" title="제안서 초안">
           <i data-lucide="file-pen-line" class="h-4 w-4"></i>
-          <span>제안서 초안</span>
+          <span class="btn-label">제안서 초안</span>
         </a>
-        <a href="#stage-2" class="nav-menu-link">
+        <a href="#stage-2" class="nav-menu-link" aria-label="성공사례 검색" title="성공사례 검색">
           <i data-lucide="search" class="h-4 w-4"></i>
-          <span>성공사례 검색</span>
+          <span class="btn-label">성공사례 검색</span>
         </a>
-        <a href="#stage-3" class="nav-menu-link">
+        <a href="#stage-3" class="nav-menu-link" aria-label="제안서 생성" title="제안서 생성">
           <i data-lucide="file-text" class="h-4 w-4"></i>
-          <span>제안서 생성</span>
+          <span class="btn-label">제안서 생성</span>
         </a>
-        <a href="#stage-4" class="nav-menu-link">
+        <a href="#stage-4" class="nav-menu-link" aria-label="동영상 제작" title="동영상 제작">
           <i data-lucide="clapperboard" class="h-4 w-4"></i>
-          <span>동영상 제작</span>
+          <span class="btn-label">동영상 제작</span>
         </a>
       </div>
     </div>
@@ -94,27 +98,27 @@
         <i data-lucide="zap" class="h-9 w-9"></i>
       </div>
     </div>
-    <div class="relative mx-auto w-full max-w-5xl px-4 py-24 text-center">
-      <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-warm/50 bg-navy/50 px-4 py-1.5 text-sm font-medium text-warm backdrop-blur-md">
-        <i data-lucide="crown" class="h-4 w-4"></i>
+    <div class="hero-content relative mx-auto w-full max-w-5xl px-4 text-center">
+      <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-warm/50 bg-navy/50 px-3 py-1 text-xs font-medium text-warm backdrop-blur-md sm:mb-5 sm:px-4 sm:py-1.5 sm:text-sm">
+        <i data-lucide="crown" class="h-3.5 w-3.5 sm:h-4 sm:w-4"></i>
         AI 경진대회
       </div>
-      <h1 class="hero-title text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">AI 스마트워크톤</h1>
-      <p class="hero-subtitle mx-auto mt-5 max-w-2xl text-base text-white/90 sm:text-lg">
+      <h1 class="hero-title font-bold tracking-tight text-white">AI 스마트워크톤</h1>
+      <p class="hero-subtitle mx-auto mt-4 max-w-2xl text-white/90 sm:mt-5">
         생성형 AI로 지역 경제 활성화 전략을 설계하고, 정책 제안서부터 홍보 영상까지 완성하는 경진대회입니다.
       </p>
     </div>
   </section>
 
   <!-- Main Contents -->
-  <main class="mx-auto max-w-5xl px-4 py-12">
-    <div class="mb-8 flex items-center gap-3">
-      <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-warm text-navy">
+  <main class="site-main mx-auto max-w-5xl px-4 py-8 sm:py-12">
+    <div class="mission-heading mb-6 flex items-center gap-3 sm:mb-8">
+      <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-warm text-navy sm:h-10 sm:w-10">
         <i data-lucide="map-pinned" class="h-5 w-5"></i>
       </span>
-      <div>
+      <div class="min-w-0">
         <p class="text-sm font-medium text-warm-600">Mission Board</p>
-        <h2 class="text-2xl font-bold tracking-tight text-navy">주제: 지역 경제 활성화</h2>
+        <h2 class="text-xl font-bold tracking-tight text-navy sm:text-2xl">주제: 지역 경제 활성화</h2>
       </div>
     </div>
 
@@ -128,10 +132,10 @@
             </span>
             <div class="space-y-1">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="badge">활용도구</span>
+                <span class="badge badge-tool">활용도구</span>
                 <a href="https://gemini.google.com/app?hl=ko" target="_blank" rel="noopener noreferrer" class="badge-outline">
                   <i data-lucide="sparkles" class="h-3 w-3"></i>
-                  Gemini (제미나이)
+                  Gemini
                 </a>
               </div>
               <h3 class="card-title">1단계: 아이디어 구체화 및 초안 작성</h3>
@@ -144,11 +148,11 @@
             <div class="toolbar-actions">
               <button type="button" class="cancel-btn" aria-label="취소" title="취소">
                 <i data-lucide="x" class="h-4 w-4"></i>
-                <span>취소</span>
+                <span class="btn-label">취소</span>
               </button>
               <button type="button" class="copy-btn" aria-label="복사" title="복사">
                 <i data-lucide="copy" class="h-4 w-4"></i>
-                <span>복사</span>
+                <span class="btn-label">복사</span>
               </button>
             </div>
           </div>
@@ -172,10 +176,10 @@
             </span>
             <div class="space-y-1">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="badge">활용도구</span>
+                <span class="badge badge-tool">활용도구</span>
                 <a href="https://gemini.google.com/app?hl=ko" target="_blank" rel="noopener noreferrer" class="badge-outline">
                   <i data-lucide="sparkles" class="h-3 w-3"></i>
-                  Gemini (제미나이)
+                  Gemini
                 </a>
               </div>
               <h3 class="card-title">2단계: 최신 데이터 확보 및 시장 검증</h3>
@@ -188,11 +192,11 @@
             <div class="toolbar-actions">
               <button type="button" class="cancel-btn" aria-label="취소" title="취소">
                 <i data-lucide="x" class="h-4 w-4"></i>
-                <span>취소</span>
+                <span class="btn-label">취소</span>
               </button>
               <button type="button" class="copy-btn" aria-label="복사" title="복사">
                 <i data-lucide="copy" class="h-4 w-4"></i>
-                <span>복사</span>
+                <span class="btn-label">복사</span>
               </button>
             </div>
           </div>
@@ -214,10 +218,10 @@
             </span>
             <div class="space-y-1">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="badge">활용도구</span>
+                <span class="badge badge-tool">활용도구</span>
                 <a href="https://claude.ai/new" target="_blank" rel="noopener noreferrer" class="badge-outline">
                   <i data-lucide="bot" class="h-3 w-3"></i>
-                  Claude (클로드)
+                  Claude
                 </a>
                 <a href="https://notebooklm.google/?hl=ko" target="_blank" rel="noopener noreferrer" class="badge-outline">
                   <i data-lucide="notebook-pen" class="h-3 w-3"></i>
@@ -240,11 +244,11 @@
               <div class="toolbar-actions">
                 <button type="button" class="cancel-btn" aria-label="취소" title="취소">
                   <i data-lucide="x" class="h-4 w-4"></i>
-                  <span>취소</span>
+                  <span class="btn-label">취소</span>
                 </button>
                 <button type="button" class="copy-btn" aria-label="복사" title="복사">
                   <i data-lucide="copy" class="h-4 w-4"></i>
-                  <span>복사</span>
+                  <span class="btn-label">복사</span>
                 </button>
               </div>
             </div>
@@ -277,11 +281,11 @@
               <div class="toolbar-actions">
                 <button type="button" class="cancel-btn" aria-label="취소" title="취소">
                   <i data-lucide="x" class="h-4 w-4"></i>
-                  <span>취소</span>
+                  <span class="btn-label">취소</span>
                 </button>
                 <button type="button" class="copy-btn" aria-label="복사" title="복사">
                   <i data-lucide="copy" class="h-4 w-4"></i>
-                  <span>복사</span>
+                  <span class="btn-label">복사</span>
                 </button>
               </div>
             </div>
@@ -316,11 +320,11 @@
               <div class="toolbar-actions">
                 <button type="button" class="cancel-btn" aria-label="취소" title="취소">
                   <i data-lucide="x" class="h-4 w-4"></i>
-                  <span>취소</span>
+                  <span class="btn-label">취소</span>
                 </button>
                 <button type="button" class="copy-btn" aria-label="복사" title="복사">
                   <i data-lucide="copy" class="h-4 w-4"></i>
-                  <span>복사</span>
+                  <span class="btn-label">복사</span>
                 </button>
               </div>
             </div>
@@ -339,10 +343,10 @@
             </span>
             <div class="space-y-1">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="badge">활용도구</span>
+                <span class="badge badge-tool">활용도구</span>
                 <a href="https://gemini.google.com/app?hl=ko" target="_blank" rel="noopener noreferrer" class="badge-outline">
                   <i data-lucide="sparkles" class="h-3 w-3"></i>
-                  Gemini (제미나이)
+                  Gemini
                 </a>
                 <a href="https://labs.google/fx/ko/tools/flow" target="_blank" rel="noopener noreferrer" class="badge-outline">
                   <i data-lucide="film" class="h-3 w-3"></i>
@@ -359,11 +363,11 @@
             <div class="toolbar-actions">
               <button type="button" class="cancel-btn" aria-label="취소" title="취소">
                 <i data-lucide="x" class="h-4 w-4"></i>
-                <span>취소</span>
+                <span class="btn-label">취소</span>
               </button>
               <button type="button" class="copy-btn" aria-label="복사" title="복사">
                 <i data-lucide="copy" class="h-4 w-4"></i>
-                <span>복사</span>
+                <span class="btn-label">복사</span>
               </button>
             </div>
           </div>

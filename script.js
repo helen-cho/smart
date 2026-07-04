@@ -65,13 +65,15 @@ function initCopyButtons() {
 
       btn.classList.add('copied');
       btn.setAttribute('aria-label', '복사됨');
-      btn.innerHTML = '<i data-lucide="check" class="h-4 w-4"></i><span>복사됨</span>';
+      btn.setAttribute('title', '복사됨');
+      btn.innerHTML = '<i data-lucide="check" class="h-4 w-4"></i><span class="btn-label">복사됨</span>';
       lucide.createIcons();
 
       setTimeout(() => {
         btn.classList.remove('copied');
         btn.setAttribute('aria-label', '복사');
-        btn.innerHTML = '<i data-lucide="copy" class="h-4 w-4"></i><span>복사</span>';
+        btn.setAttribute('title', '복사');
+        btn.innerHTML = '<i data-lucide="copy" class="h-4 w-4"></i><span class="btn-label">복사</span>';
         lucide.createIcons();
       }, 1500);
     });
@@ -94,7 +96,47 @@ function initCancelButtons() {
   });
 }
 
+function initNavMenu() {
+  const nav = document.querySelector('.site-nav');
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('nav-menu');
+  if (!nav || !toggle || !menu) return;
+
+  function closeMenu() {
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', '메뉴 열기');
+  }
+
+  function openMenu() {
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', '메뉴 닫기');
+  }
+
+  toggle.addEventListener('click', () => {
+    if (nav.classList.contains('is-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) {
+      closeMenu();
+    }
+  });
+}
+
 initAutoTextareas();
 initCopyButtons();
 initCancelButtons();
+initNavMenu();
 window.addEventListener('resize', initAutoTextareas);
