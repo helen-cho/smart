@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스마트워크톤</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans KR"', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              DEFAULT: '#0B1F3A',
+              50: '#F0F4F8',
+              100: '#D9E2EC',
+              200: '#BCCCDC',
+              300: '#9FB3C8',
+              400: '#627D98',
+              500: '#334E68',
+              600: '#243B53',
+              700: '#1A2F45',
+              800: '#102A43',
+              900: '#0B1F3A',
+            },
+            warm: {
+              DEFAULT: '#F5C518',
+              50: '#FFFBEB',
+              100: '#FEF3C7',
+              200: '#FDE68A',
+              300: '#FCD34D',
+              400: '#F5C518',
+              500: '#EAB308',
+              600: '#CA8A04',
+            },
+          },
+          boxShadow: {
+            card: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-navy-50 font-sans text-navy-900 antialiased">
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 border-b border-navy-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <div class="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
+      <div class="flex items-center gap-2">
+        <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-navy text-warm">
+          <i data-lucide="trophy" class="h-5 w-5"></i>
+        </span>
+        <span class="text-lg font-bold tracking-tight text-navy">AI 스마트 워크톤</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="#stage-1" class="nav-menu-link">
+          <i data-lucide="file-pen-line" class="h-4 w-4"></i>
+          <span>제안서 초안</span>
+        </a>
+        <a href="#stage-2" class="nav-menu-link">
+          <i data-lucide="search" class="h-4 w-4"></i>
+          <span>성공사례 검색</span>
+        </a>
+        <a href="#stage-3" class="nav-menu-link">
+          <i data-lucide="file-text" class="h-4 w-4"></i>
+          <span>제안서 생성</span>
+        </a>
+        <a href="#stage-4" class="nav-menu-link">
+          <i data-lucide="clapperboard" class="h-4 w-4"></i>
+          <span>동영상 제작</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section relative overflow-hidden border-b border-navy-100">
+    <div class="hero-overlay pointer-events-none absolute inset-0"></div>
+    <div class="pointer-events-none absolute inset-0 opacity-15">
+      <div class="absolute -left-6 top-8 text-warm">
+        <i data-lucide="sparkles" class="h-14 w-14"></i>
+      </div>
+      <div class="absolute right-8 top-12 text-warm">
+        <i data-lucide="star" class="h-10 w-10"></i>
+      </div>
+      <div class="absolute bottom-10 right-12 text-warm">
+        <i data-lucide="zap" class="h-9 w-9"></i>
+      </div>
+    </div>
+    <div class="relative mx-auto w-full max-w-5xl px-4 py-24 text-center">
+      <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-warm/50 bg-navy/50 px-4 py-1.5 text-sm font-medium text-warm backdrop-blur-md">
+        <i data-lucide="crown" class="h-4 w-4"></i>
+        AI 경진대회
+      </div>
+      <h1 class="hero-title text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">AI 스마트워크톤</h1>
+      <p class="hero-subtitle mx-auto mt-5 max-w-2xl text-base text-white/90 sm:text-lg">
+        생성형 AI로 지역 경제 활성화 전략을 설계하고, 정책 제안서부터 홍보 영상까지 완성하는 경진대회입니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Contents -->
+  <main class="mx-auto max-w-5xl px-4 py-12">
+    <div class="mb-8 flex items-center gap-3">
+      <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-warm text-navy">
+        <i data-lucide="map-pinned" class="h-5 w-5"></i>
+      </span>
+      <div>
+        <p class="text-sm font-medium text-warm-600">Mission Board</p>
+        <h2 class="text-2xl font-bold tracking-tight text-navy">주제: 지역 경제 활성화</h2>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <!-- Step 1 -->
+      <article id="stage-1" class="card scroll-mt-20">
+        <div class="card-header">
+          <div class="flex items-start gap-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy text-warm">
+              <i data-lucide="lightbulb" class="h-5 w-5"></i>
+            </span>
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="badge">활용도구</span>
+                <a href="https://gemini.google.com/app?hl=ko" target="_blank" rel="noopener noreferrer" class="badge-outline">
+                  <i data-lucide="sparkles" class="h-3 w-3"></i>
+                  Gemini (제미나이)
+                </a>
+              </div>
+              <h3 class="card-title">1단계: 아이디어 구체화 및 초안 작성</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-content textarea-with-copy">
+          <div class="textarea-toolbar">
+            <p class="card-description">평소 대표님들이 느끼는 지역 경제의 '아킬레스건'을 AI에게 던져 구체적인 사업 모델로 발전시킵니다.</p>
+            <div class="toolbar-actions">
+              <button type="button" class="cancel-btn" aria-label="취소" title="취소">
+                <i data-lucide="x" class="h-4 w-4"></i>
+                <span>취소</span>
+              </button>
+              <button type="button" class="copy-btn" aria-label="복사" title="복사">
+                <i data-lucide="copy" class="h-4 w-4"></i>
+                <span>복사</span>
+              </button>
+            </div>
+          </div>
+          <textarea class="auto-textarea" rows="1">[목표]
+실제 지역 문제(예: 인구 소멸, 전통시장 침체, 청년 유출 등)를 도출하고 AI와의 브레인스토밍을 통해 혁신적인 해결책을 경험한다.
+
+[문제점]
+청년 인구 유출로 인한 지역 경제 침체
+
+[지시사항]
+위 문제점을 해결할 혁신적인 아이디어 5가지를 구체적인 실행 방안과 함께 제안서 초안 형태로 출력해줘.</textarea>
+        </div>
+      </article>
+
+      <!-- Step 2 -->
+      <article id="stage-2" class="card scroll-mt-20">
+        <div class="card-header">
+          <div class="flex items-start gap-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy text-warm">
+              <i data-lucide="search" class="h-5 w-5"></i>
+            </span>
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="badge">활용도구</span>
+                <a href="https://gemini.google.com/app?hl=ko" target="_blank" rel="noopener noreferrer" class="badge-outline">
+                  <i data-lucide="sparkles" class="h-3 w-3"></i>
+                  Gemini (제미나이)
+                </a>
+              </div>
+              <h3 class="card-title">2단계: 최신 데이터 확보 및 시장 검증</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-content textarea-with-copy">
+          <div class="textarea-toolbar">
+            <p class="card-description">정부의 최신 지역균형발전 예산, 지자체 지원 조례, 성공적인 지역 활성화 사례를 실시간으로 검색합니다.</p>
+            <div class="toolbar-actions">
+              <button type="button" class="cancel-btn" aria-label="취소" title="취소">
+                <i data-lucide="x" class="h-4 w-4"></i>
+                <span>취소</span>
+              </button>
+              <button type="button" class="copy-btn" aria-label="복사" title="복사">
+                <i data-lucide="copy" class="h-4 w-4"></i>
+                <span>복사</span>
+              </button>
+            </div>
+          </div>
+          <textarea class="auto-textarea" rows="1">[목표]
+가짜 데이터를 배제하여 제안서의 신뢰도를 높이고, 실제 정부 통계와 최근 정책 동향을 확보한다.
+
+[지시사항]
+1. 최근 2년간 국내에서 '지방소멸대응기금'을 활용한 사례 중, 기업 유치나 청년 창업 유치에 가장 성공한 지자체 사례 3곳을 찾아줘.
+2. 각 사례의 성공 요인, 예산 규모, 지역 경제 파급 효과를 데이터 중심으로 요약하고 출처 URL을 함께 제시해줘.</textarea>
+        </div>
+      </article>
+
+      <!-- Step 3 -->
+      <article id="stage-3" class="card scroll-mt-20">
+        <div class="card-header">
+          <div class="flex items-start gap-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy text-warm">
+              <i data-lucide="file-text" class="h-5 w-5"></i>
+            </span>
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="badge">활용도구</span>
+                <a href="https://claude.ai/new" target="_blank" rel="noopener noreferrer" class="badge-outline">
+                  <i data-lucide="bot" class="h-3 w-3"></i>
+                  Claude (클로드)
+                </a>
+                <a href="https://notebooklm.google/?hl=ko" target="_blank" rel="noopener noreferrer" class="badge-outline">
+                  <i data-lucide="notebook-pen" class="h-3 w-3"></i>
+                  노트북 LM
+                </a>
+              </div>
+              <h3 class="card-title">3단계: 공공기관 제출용 정책 제안서 생성</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-content space-y-4">
+          <!-- A. Word -->
+          <div class="textarea-with-copy">
+            <div class="flex items-center gap-2">
+              <i data-lucide="file-type" class="h-5 w-5 text-warm-600"></i>
+              <h4 class="text-base font-semibold text-navy">A. 워드 문서 생성</h4>
+            </div>
+            <div class="textarea-toolbar">
+              <p class="card-description">1단계와 2단계의 내용을 결합하여, 공공 보고서용 구조화된 목차와 격식체 어미(~함, ~구축)로 뼈대를 잡고 내용을 채웁니다.</p>
+              <div class="toolbar-actions">
+                <button type="button" class="cancel-btn" aria-label="취소" title="취소">
+                  <i data-lucide="x" class="h-4 w-4"></i>
+                  <span>취소</span>
+                </button>
+                <button type="button" class="copy-btn" aria-label="복사" title="복사">
+                  <i data-lucide="copy" class="h-4 w-4"></i>
+                  <span>복사</span>
+                </button>
+              </div>
+            </div>
+            <textarea class="auto-textarea" rows="1">[목표]
+지자체나 정부 부처에 바로 제출 가능한 '표준 정책 제안서' 수준의 워드 문서를 자동 생성한다.
+
+[지시사항]
+다음 목차를 포함한 제안서를 작성해줘.
+1. 1페이지(표지): 메인 타이틀 [청년 인구 유출 대응 지역경제 활성화 전략], 서브타이틀 [상공회의소 대표를 위한 정책 제안서]
+2. 배경 및 필요성 (위기 상황 강조)
+3. 사업 개요 (기간, 대상, 예상 예산)
+4. 세부 추진 과제 (3대 핵심 과제로 세분화)
+5. 재원 확보 및 지자체와의 협력 방안
+6. 기대 효과 (일자리 창출 및 생산 유발 효과)
+
+[주의사항]
+공공 보고서에 어울리는 깔끔한 개조식(~함, ~임, ~요망)으로 작성해줘.
+
+[입력사항]
+준비가 되었다면 "제안서 초안과 성공 사례 파일 또는 내용을 한 줄로 입력해 주세요."라고만 답변하고 대기하세요.</textarea>
+          </div>
+
+          <!-- B. PPT -->
+          <div class="textarea-with-copy mb-6">
+            <div class="textarea-toolbar">
+              <div class="flex items-center gap-2">
+                <i data-lucide="presentation" class="h-5 w-5 text-warm-600"></i>
+                <h4 class="text-base font-semibold text-navy">B. 발표용 PPT 생성</h4>
+              </div>
+              <div class="toolbar-actions">
+                <button type="button" class="cancel-btn" aria-label="취소" title="취소">
+                  <i data-lucide="x" class="h-4 w-4"></i>
+                  <span>취소</span>
+                </button>
+                <button type="button" class="copy-btn" aria-label="복사" title="복사">
+                  <i data-lucide="copy" class="h-4 w-4"></i>
+                  <span>복사</span>
+                </button>
+              </div>
+            </div>
+            <textarea class="auto-textarea" rows="1">[목표]
+'표준 정책 제안서' 수준의 발표용 PPT를 자동 생성한다.
+
+[디자인 테마]
+- 색상: 제안서에 어울리는 톤으로 설정
+- 스타일: 깔끔하고 군더더기 없는 비즈니스 미니멀 스타일
+
+[슬라이드 구성 및 상세 요청사항]
+- 슬라이드1: (표지) 메인 타이틀 [청년 인구 유출 대응 지역경제 활성화 전략], 서브타이틀 [상공회의소 대표를 위한 정책 제안서]
+- 슬라이드2: 배경 및 필요성 (위기 상황 강조)
+- 슬라이드3: 세부 추진 과제 (3대 핵심 과제로 세분화)
+- 슬라이드4: 재원 확보 및 지자체와의 협력 방안
+- 슬라이드5: 기대 효과 (일자리 창출 및 생산 유발 효과)
+
+[주의사항]
+슬라이드 내 텍스트는 너무 길지 않게 핵심 키워드 중심(Bullet points)으로 구성해줘.
+
+[입력사항]
+준비가 되었다면 "정책 제안서 파일 또는 내용을 한 줄로 입력해 주세요."라고만 답변하고 대기하세요.</textarea>
+          </div>
+          <div class="textarea-with-copy mt-16">
+            <div class="flex items-center gap-2">
+              <i data-lucide="palette" class="h-5 w-5 text-warm-600"></i>
+
+              <h4 class="text-base font-semibold text-navy">디자인 테마 생성 팁</h4>
+            </div>
+            <div class="textarea-toolbar">
+              <p class="card-description">디자인 테마을 생성한 후 위 프롬프트의 [디자인 테마] 영역에 복사하여 PPT를 다시 생성해 본다.</p>
+              <div class="toolbar-actions">
+                <button type="button" class="cancel-btn" aria-label="취소" title="취소">
+                  <i data-lucide="x" class="h-4 w-4"></i>
+                  <span>취소</span>
+                </button>
+                <button type="button" class="copy-btn" aria-label="복사" title="복사">
+                  <i data-lucide="copy" class="h-4 w-4"></i>
+                  <span>복사</span>
+                </button>
+              </div>
+            </div>
+            <textarea class="auto-textarea" rows="1">[지역경제 활성화 제안서]를 [심사위원 매료용] PPT를 작성하려고 하는데 어울리는 디자인 테마 프롬프트로 출력해줘.</textarea>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Step 4 -->
+      <article id="stage-4" class="card scroll-mt-20">
+        <div class="card-header">
+          <div class="flex items-start gap-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy text-warm">
+              <i data-lucide="clapperboard" class="h-5 w-5"></i>
+            </span>
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="badge">활용도구</span>
+                <a href="https://gemini.google.com/app?hl=ko" target="_blank" rel="noopener noreferrer" class="badge-outline">
+                  <i data-lucide="sparkles" class="h-3 w-3"></i>
+                  Gemini (제미나이)
+                </a>
+                <a href="https://labs.google/fx/ko/tools/flow" target="_blank" rel="noopener noreferrer" class="badge-outline">
+                  <i data-lucide="film" class="h-3 w-3"></i>
+                  Google Flow
+                </a>
+              </div>
+              <h3 class="card-title">4단계: 심사위원 매료용 홍보 동영상 제작</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-content textarea-with-copy">
+          <div class="textarea-toolbar">
+            <p class="card-description">3단계에서 완성된 정책 제안서를 입력하여 어울리는 지역 비즈니스 관련 스톡 영상과 나레이션을 입혀 비디오를 완성합니다.</p>
+            <div class="toolbar-actions">
+              <button type="button" class="cancel-btn" aria-label="취소" title="취소">
+                <i data-lucide="x" class="h-4 w-4"></i>
+                <span>취소</span>
+              </button>
+              <button type="button" class="copy-btn" aria-label="복사" title="복사">
+                <i data-lucide="copy" class="h-4 w-4"></i>
+                <span>복사</span>
+              </button>
+            </div>
+          </div>
+          <textarea class="auto-textarea" rows="1">[목표]
+[정책 제안서]를 입력받아 [심사위원] 타겟이 보고 반할만한 참신한 60초 홍보영상 대본과 화면 구성안을 출력한다.
+
+[사용 툴]
+Google Flow (구글 플로우)
+
+[영상을 만들 때 지켜야 할 규칙]
+1. 영상메시지: 처음에는 한국 지방 소멸의 심각성을 진지하게 보여주고, 뒤로 갈수록 한국 청년들이 들어와 활기차고 희망찬 분위기로 바뀌게 해줘.
+2. 톤과 색감: 신뢰감 있고 깔끔한 공공기관 제안 영상에 어울리는 톤과 색감은 블루, 화이트, 라이트그레이 중심
+3. 비율과 컷: 세로 9:16 비율, 5개 컷으로 구성하고 각 컷별로 카메라의 움직임, 장면설명, 화면문구, 오디오 분위기까지 제안해줘.
+(예: 천천히 줌인하는 카메라 | 여자아이가 풍선을 들고 달려감 | 한강공원 석양 무렵 | 따뜻한 시네마톤 | 주변 소리는 사람, 새소리)
+
+[출력 형태] (각 컷별로 아래와 같이 정리)
+- [시간]: 적당한 시간으로 배분
+- [장면]: 반드시 한국 배경에 한국 청년이 들어가도록 장면을 설명해줘.
+- [동작]: 자연스러운 동작
+- [카메라]: 카메라 움직임
+- [화면문구]: 스마트폰으로 봐도 한눈에 들어오게 아주 짧고 강렬한 단어 중심으로 써줘 (한글이 깨질 경우 출력금지 경고)
+- [성우대사]: [20대 한국인 여성 목소리] 추가 출력
+- [오디오]: 장면 분위기와 어울리는 사운드
+
+[주의사항]
+반드시 한국어와 한국을 배경으로 홍보영상을 제작하도록 프롬프트에 추가해줘.
+
+[입력사항]
+준비가 되었다면 한 줄로 "제안서 파일이나 내용을 입력해 주세요."라고만 답변하고 대기하세요.</textarea>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-navy-100 bg-navy text-navy-200">
+    <div class="mx-auto flex max-w-5xl flex-col items-center gap-3 px-4 py-8 text-center text-sm">
+      <div class="mb-1 flex items-center gap-2 text-warm">
+        <i data-lucide="trophy" class="h-4 w-4"></i>
+        <span class="font-semibold text-white">스마트워크톤</span>
+      </div>
+      <p>&copy; 2026 스마트워크톤. All rights reserved.</p>
+      <p class="inline-flex items-center gap-1.5">
+        <i data-lucide="map-pin" class="h-4 w-4 text-warm"></i>
+        주소: 서울특별시 중구 세종대로 110
+      </p>
+      <p class="inline-flex items-center gap-1.5">
+        <i data-lucide="phone" class="h-4 w-4 text-warm"></i>
+        전화: 02-1234-5678
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
